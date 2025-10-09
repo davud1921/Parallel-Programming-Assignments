@@ -1,4 +1,5 @@
 # Parallel-Programming-Assignments
+*Before*
 
 base) student@itcenter-lab128:~/Desktop/Parallel-Programming-Assignments$ make valgrind
 valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./ass_1
@@ -49,3 +50,22 @@ Mistakes:
 2) Memory Overwrites (array out of bounds): I changed loop condition from "i<=10" to "i<10" because the array has 10 elements from 0 to 9 and we are looping to its 11th element.  
 
 3) Memory leak: Missing free(iarray) call. We called free(iarray) to release memory previously allocated using malloc. If we didn`t call free(iarray) there would be a memory leak. 
+
+*After*
+(base) student@itcenter-lab128:~/Desktop/Parallel-Programming-Assignments$ make valgrind
+gcc -Wall -Wextra -g -std=c99 -o ass_1 main.c
+valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes ./ass_1
+==9553== Memcheck, a memory error detector
+==9553== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==9553== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==9553== Command: ./ass_1
+==9553== 
+==9553== 
+==9553== HEAP SUMMARY:
+==9553==     in use at exit: 0 bytes in 0 blocks
+==9553==   total heap usage: 1 allocs, 1 frees, 40 bytes allocated
+==9553== 
+==9553== All heap blocks were freed -- no leaks are possible
+==9553== 
+==9553== For lists of detected and suppressed errors, rerun with: -s
+==9553== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
