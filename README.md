@@ -1,6 +1,7 @@
 # Parallel-Programming-Assignments
 
 ***Screenshots***
+![sequential](sequential.png)
 ![parallel_2](parallel_2.png)
 ![parallel_4](parallel_4.png)
 ![parallel_8](parallel_8.png)
